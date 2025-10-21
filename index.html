@@ -3,64 +3,63 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>OsloMet Innovators</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bachelor Gruppe</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 </head>
 
 <body>
-<!-- BLUE INTRO —-->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
-<section class="hero hero--story" id="blue-intro">
-  <div class="hero__sticky">
+    <!-- BLUE INTRO -->
+    <section class="hero hero--story" id="blue-intro">
+        <div class="hero__sticky">
+            <div class="hero__title">
+                <h1 class="title-main">
+                    Bachelor<span class="title-break"><span class="offset">Gruppe</span></span>
+                </h1>
+            </div>
 
-    <div class="hero__title">
-      <h1>Bachelor Gruppe</h1>
-    </div>
-
-   
-    <div class="story">
-      <div class="story__layer story__current"></div>
-      <div class="story__layer story__next"></div>
-    </div>
-
-
-    <div class="hero__hint">▼ Scroll ned</div>
-  </div>
-</section>
-
-
-
-    <!-- WHITE SECTION (TEAM GRID) -->
+            <div class="story" aria-live="polite"></div>
+        </div>
+    </section>
+    <!-- WHITE PANEL (slides over) -->
     <section class="reveal-section">
-        <div class="white-panel">
+        <div class="white-panel white-overlay">
             <div class="team">
+
                 <!-- JARA -->
-                <div class="person fade">
+                <div class="person">
                     <div class="text">
                         <h2>JARA ARIF AZAD-NOURI</h2>
                         <p>Developer focused on clean, scalable code and intuitive design.</p>
-                        <a href="https://www.linkedin.com/in/jara-azad-99248427b/" target="_blank"
-                            class="linkedin-clean">
-                            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg"
-                                alt="LinkedIn" class="linkedin-clean-icon">
-                        </a>
-
+                        <div class="links">
+                            <a href="https://www.linkedin.com/in/jara-azad-99248427b/" target="_blank" rel="noopener"
+                                class="linkedin-clean" aria-label="Jara på LinkedIn">
+                                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg"
+                                    alt="LinkedIn" class="linkedin-clean-icon">
+                            </a>
+                        </div>
                     </div>
                     <div class="image">
                         <img src="img/ronaldo.jpg" alt="Jara Arif Azad-Nouri">
                     </div>
                 </div>
 
-
-
                 <!-- SINIT -->
-                <div class="person fade reverse">
+                <div class="person reverse">
                     <div class="text">
                         <h2>SINIT YONAS TEWELDE</h2>
                         <p>Backend developer passionate about data and AI-driven solutions.</p>
+                        <div class="links">
+                            <a href="#" target="_blank" rel="noopener" class="linkedin-clean"
+                                aria-label="Sinit på LinkedIn">
+                                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg"
+                                    alt="LinkedIn" class="linkedin-clean-icon">
+                            </a>
+                        </div>
                     </div>
                     <div class="image">
                         <img src="img/neymar.jpg" alt="Sinit Yonas Tewelde">
@@ -68,10 +67,17 @@
                 </div>
 
                 <!-- SIGRID -->
-                <div class="person fade">
+                <div class="person">
                     <div class="text">
                         <h2>SIGRID AARNES</h2>
                         <p>Designer shaping user-centered digital experiences with purpose.</p>
+                        <div class="links">
+                            <a href="#" target="_blank" rel="noopener" class="linkedin-clean"
+                                aria-label="Sigrid på LinkedIn">
+                                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg"
+                                    alt="LinkedIn" class="linkedin-clean-icon">
+                            </a>
+                        </div>
                     </div>
                     <div class="image">
                         <img src="img/MESSI.jpg" alt="Sigrid Aarnes">
@@ -79,19 +85,17 @@
                 </div>
 
                 <!-- ALI -->
-                <div class="person fade reverse">
+                <div class="person reverse">
                     <div class="text">
                         <h2>ALI ALDER SAJED HAMID</h2>
                         <p>Backend-focused developer creating practical, user-driven solutions.</p>
-                        <a href="https://www.linkedin.com/in/ali-hamid-427323363/" target="_blank"
-                            class="linkedin-clean">
-                            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg"
-                                alt="LinkedIn" class="linkedin-clean-icon">
-                        </a>
-
-
-
-
+                        <div class="links">
+                            <a href="https://www.linkedin.com/in/ali-hamid-427323363/" target="_blank" rel="noopener"
+                                class="linkedin-clean" aria-label="Ali på LinkedIn">
+                                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg"
+                                    alt="LinkedIn" class="linkedin-clean-icon">
+                            </a>
+                        </div>
                     </div>
                     <div class="image">
                         <img src="img/hellokitty.jpg" alt="Ali Alder Sajed Hamid">
@@ -99,13 +103,20 @@
                 </div>
 
                 <!-- ESAT -->
-                <div class="person fade">
+                <div class="person">
                     <div class="text">
                         <h2>SIAR ESAT CESUR</h2>
                         <p>Frontend developer crafting aesthetic and functional interfaces.</p>
+                        <div class="links">
+                            <a href="https://www.linkedin.com/in/siar-esat-cesur/" target="_blank" rel="noopener"
+                                class="linkedin-clean" aria-label="Esat på LinkedIn">
+                                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg"
+                                    alt="LinkedIn" class="linkedin-clean-icon">
+                            </a>
+                        </div>
                     </div>
                     <div class="image">
-                        <img src="/img/mario gomez.jpg" alt="Siar Esat Cesur">
+                        <img src="img/mario gomez.jpg" alt="Siar Esat Cesur">
                     </div>
                 </div>
 
@@ -113,8 +124,8 @@
         </div>
     </section>
 
+
     <script src="script.js"></script>
-    <div class="cursor"></div>
 </body>
 
 </html>

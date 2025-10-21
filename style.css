@@ -1,254 +1,320 @@
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+:root {
+    --blue: #001AFF;
+    --ink: #E8EEFF;
+    --li: #0A66C2
+}
+
+html,
 body {
-  font-family: "Bebas Neue", sans-serif;
-  background: #001AFF;
-  color: #fff;
-  overflow-x: hidden;
-  scrollbar-width: none;
+    height: 100%
 }
 
-
-body::-webkit-scrollbar { display: none; }
-
-
-
-:root{
-  --blue:#001AFF;
-  --ink:#E8EEFF;                  
+body {
+    font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    background: var(--blue);
+    color: #fff;
+    overflow-x: hidden
 }
 
-.hero--story{
-  position:relative;
-  height:320vh;                   
-}
-.hero__sticky{
-  position:sticky;
-  top:0;
-  height:100vh;
-  background:var(--blue);
-  color:var(--ink);
-  overflow:hidden;
+.hero--story {
+    position: relative;
+    height: 320vh
 }
 
-
-.hero__title{
-  position:absolute;
-  top:36px;
-  left:40px;
-}
-.hero__title h1{
-  font-family:"Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-  font-weight:800;
-  letter-spacing:.02em;
-  font-size:clamp(18px,2.2vw,22px);
-  text-transform:uppercase;
-  margin:0;
-  color: #FFC107; /* bright orange highlight */
+.hero__sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    background: var(--blue);
+    color: var(--ink);
+    overflow: hidden;
+    isolation: isolate;
+    z-index: 1
 }
 
-
-.story{
-  position:absolute;
-  right:clamp(24px,8vw,100px);
-  top:50%;
-  transform:translateY(-50%);
-  width:min(54ch,50vw);
-  min-height:200px;
-  font-family:"Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-  line-height:1.6;
-  color:var(--ink);
+/* Title */
+.hero__title {
+    position: absolute;
+    top: 8vh;
+    left: 6vw
 }
 
-
-.story__layer{
-  position:absolute;
-  inset:0;
-  display:flex;
-  flex-direction:column;
-  gap:12px;
-  opacity:0;
-  transform:translateY(18px);
-  pointer-events:none;
+.hero__title h1 {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 700;
+    letter-spacing: .02em;
+    text-transform: uppercase;
+    margin: 0;
+    color: #FFC107;
+    line-height: .9
 }
-.story__layer p{
-  margin:0;
-  font-size:clamp(16px,1.3vw,19px);
-  font-weight:400;
+
+/* fallback if plain h1 text */
+.hero__title h1 {
+    font-size: clamp(3.2rem, 6vw, 7rem)
+}
+
+/* creative split title support */
+.title-main {
+    font-size: clamp(3.6rem, 6.8vw, 8rem);
+    display: inline-block
+}
+
+.title-break {
+    display: block;
+    margin-left: .45em
+}
+
+.title-break .offset {
+    display: inline-block;
+    transform: translateX(-.35em)
+}
+
+/* Story on the right */
+.story {
+    position: absolute;
+    right: clamp(6vw, 10vw, 120px);
+    top: 50%;
+    transform: translateY(-50%);
+    width: min(58ch, 52vw);
+    min-height: 260px;
+    line-height: 1.8;
+    font-size: clamp(1.05rem, 1.4vw, 1.6rem);
+    font-weight: 500;
+    color: var(--ink)
 }
 
 .story__step {
-  position: absolute; inset: 0;
-  opacity: 0; transform: translateY(18px);
-  will-change: opacity, transform;
-  display: flex; flex-direction: column; gap: 12px;
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transform: translateY(18px);
+    will-change: opacity, transform
 }
 
-/* We’ll set --i = index (0..N-1) from JS, and --p = progress */
-.story[data-steps] { contain: content; }
-
-/* Reduced motion: just show first step */
-@media (prefers-reduced-motion: reduce) {
-  .story__step { opacity: 0 !important; transform: none !important; }
-  .story__step[data-index="0"] { opacity: 1 !important; }
+.story[data-steps] {
+    contain: content
 }
 
-
-.hero__hint{
-  position:absolute;
-  bottom:22px;
-  left:50%;
-  transform:translateX(-50%);
-  font:600 12px/1 "Inter", system-ui, sans-serif;
-  letter-spacing:.12em;
-  opacity:.8;
-  animation:hintBounce 1.8s infinite;
+.hero__hint {
+    position: absolute;
+    bottom: 22px;
+    left: 50%;
+    transform: translateX(-50%);
+    font: 600 12px/1 "Inter", system-ui, sans-serif;
+    letter-spacing: .12em;
+    opacity: .85;
+    animation: hintBounce 1.8s infinite
 }
 
-@keyframes hintBounce{
-  0%,100%{ transform:translate(-50%,0); }
-  50%{ transform:translate(-50%,6px); }
+@keyframes hintBounce {
+
+    0%,
+    100% {
+        transform: translate(-50%, 0)
+    }
+
+    50% {
+        transform: translate(-50%, 6px)
+    }
 }
 
-
-@media (max-width:900px){
-  .story{
-    left:32px;
-    right:32px;
-    width:auto;
-  }
-}
-
-
-
+/* White overlay */
 .reveal-section {
-  position: relative;
-  height: 250vh;
+    position: relative;
+    min-height: 100vh
+}
+
+.white-overlay {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    z-index: 10;
+    transform: translateY(100%);
+    will-change: transform;
+    transition: transform .12s linear;
+    background: #fff
 }
 
 .white-panel {
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  background: #fff;
-  color: #000;
-  transform: translateY(100%);
-  transition: transform 1s ease-out;
-  z-index: 2;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  overflow-y: auto;
+    height: 100%;
+    background: #fff;
+    color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow-y: auto
 }
 
+/* Team grid */
 .team {
-  width: 85%;
-  max-width: 1100px;
-  margin-top: 8vh;
-  display: flex;
-  flex-direction: column;
-  gap: 100px;
+    width: 85%;
+    max-width: 1100px;
+    margin-top: 8vh;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    padding-bottom: 120px
 }
 
-/* TEAM LAYOUT */
 .person {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 80px;
-  opacity: 0;
-  transform: translateY(60px);
-  transition: all 0.8s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 80px;
+    opacity: 0;
+    transform: translateY(60px);
+    transition: opacity .8s ease, transform .8s ease
 }
 
 .person.reverse {
-  flex-direction: row-reverse;
+    flex-direction: row-reverse
 }
 
 .person.visible {
-  opacity: 1;
-  transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0)
 }
 
 .text {
-  flex: 1;
+    flex: 1
 }
 
 .text h2 {
-  font-size: 1.8rem;
-  margin-bottom: 10px;
-  letter-spacing: 1px;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: clamp(1.8rem, 2.4vw, 2.6rem);
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    color: #111
 }
 
 .text p {
-  font-family: Arial, sans-serif;
-  font-size: 0.95rem;
-  color: #333;
-  margin-bottom: 12px;
-  max-width: 400px;
-}
-
-.text a {
-  font-family: Arial, sans-serif;
-  text-decoration: none;
-  font-size: 0.85rem;
-  color: #001AFF;
-  border-bottom: 1px solid #001AFF;
-  transition: color 0.3s, border-color 0.3s;
-}
-
-.text a:hover {
-  color: #000;
-  border-color: #000;
+    font-size: clamp(.98rem, 1.1vw, 1.1rem);
+    color: #333;
+    margin-bottom: 12px;
+    max-width: 480px
 }
 
 .image {
-  flex: 1;
-  display: flex;
-  justify-content: center;
+    flex: 1;
+    display: flex;
+    justify-content: center
 }
 
 .image img {
-  width: 100%;
-  max-width: 400px;
-  border-radius: 12px;
-  filter: grayscale(100%);
-  transition: filter 0.5s ease;
+    width: 100%;
+    max-width: 420px;
+    border-radius: 12px;
+    filter: grayscale(100%);
+    transition: filter .5s ease
 }
 
 .image img:hover {
-  filter: grayscale(0%);
+    filter: grayscale(0%)
 }
 
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  .person, .person.reverse {
-    flex-direction: column;
-    text-align: center;
-  }
-  .image img {
-    max-width: 300px;
-  }
-}
-
-.team {
-  padding-bottom: 120px;   
+/* LinkedIn badge */
+.text .links {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    align-items: center
 }
 
 .linkedin-clean {
-  display: inline-block;
-  width: 28px;
-  height: 28px;
-  border: none !important;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 9999px;
+    border: 1.5px solid var(--li);
+    background: transparent;
+    transition: background .2s ease, transform .2s ease, box-shadow .25s ease, border-color .2s ease;
+    text-decoration: none
 }
 
 .linkedin-clean-icon {
-  width: 100%;
-  height: 100%;
-  filter: invert(30%) sepia(92%) saturate(3916%) hue-rotate(200deg) brightness(94%) contrast(101%);
-  transition: transform 0.25s ease;
+    width: 18px;
+    height: 18px;
+    filter: invert(17%) sepia(99%) saturate(2415%) hue-rotate(199deg) brightness(91%) contrast(101%);
+    transition: filter .2s ease
+}
+
+.linkedin-clean:hover {
+    background: var(--li);
+    border-color: var(--li);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(10, 102, 194, .24)
 }
 
 .linkedin-clean:hover .linkedin-clean-icon {
-  transform: scale(1.1);
+    filter: brightness(0) invert(1)
 }
 
+.linkedin-clean:focus-visible {
+    outline: 3px solid color-mix(in oklab, var(--li), white 25%);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px color-mix(in oklab, var(--li), white 70%)
+}
+
+.hero__sticky .linkedin-clean {
+    border-color: #fff
+}
+
+.hero__sticky .linkedin-clean-icon {
+    filter: brightness(0) invert(1)
+}
+
+.hero__sticky .linkedin-clean:hover {
+    background: #fff;
+    border-color: #fff
+}
+
+.hero__sticky .linkedin-clean:hover .linkedin-clean-icon {
+    filter: invert(17%) sepia(99%) saturate(2415%) hue-rotate(199deg) brightness(91%) contrast(101%)
+}
+
+
+@media (max-width:900px) {
+    .hero__title {
+        top: 6vh;
+        left: 28px
+    }
+
+    .story {
+        left: 32px;
+        right: 32px;
+        width: auto;
+        font-size: 1.05rem
+    }
+
+    .person,
+    .person.reverse {
+        flex-direction: column;
+        text-align: center;
+        gap: 28px
+    }
+
+    .image img {
+        max-width: 300px
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion:reduce) {
+    .white-overlay {
+        transition: none
+    }
+
+    .story__step {
+        transition: none;
+        transform: none !important
+    }
+}
