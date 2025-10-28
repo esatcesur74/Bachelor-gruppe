@@ -7,7 +7,7 @@ const stage = hero ? hero.querySelector('.story') : null;
 const STEPS = [
   `<p><strong>Hei!</strong></p>
    <p>Vi er en gruppe på fem elever som studerer Informasjonsteknologi på Oslomet.</p>`,
-  `<p>Vi liker å bygge pene, raske og brukervennlige løsninger.</p>`,
+  `<p>Vi legger vekt på å utvikle løsninger som kombinerer godt design, høy ytelse og god brukeropplevelse.</p>`,
   `<p>Scroll videre for å møte oss ↓</p>`
 ];
 
